@@ -13,6 +13,20 @@
 
 <body>
 
+    <div id="app">
+        <div class="container">
+            <div class="lista-contatti">
+                <div class="contatto" v-for="item in contacts">
+                    <div>
+                        <span>{{ item.name }}</span>
+                        <span> 12:00 </span>
+                    </div>
+                    <div>Ultimo messaggio inviato</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
