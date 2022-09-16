@@ -16,7 +16,10 @@
     <div id="app">
         <div class="container">
             <div class="lista-contatti">
-                <div class="contatto" v-for="item in contacts">
+                <div class="contatto" v-for="(item, index) in contacts">
+                    <div>
+                        <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" class="profile-picture">
+                    </div>
                     <div>
                         <span>{{ item.name }}</span>
                         <span> 12:00 </span>
