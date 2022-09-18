@@ -5,29 +5,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/script.js" defer></script>
+
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> <!-- VUE -->
+    <script src="js/script.js" defer></script> <!-- JS -->
     <title>Boolzapp</title>
 </head>
 
 <body>
 
     <div id="app">
-        <div class="container">
-            <div class="lista-contatti">
-                <div class="contatto" v-for="(item, index) in contacts">
-                    <div>
-                        <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" class="profile-picture">
-                    </div>
-                    <div>
-                        <span>{{ item.name }}</span>
-                        <span> 12:00 </span>
-                    </div>
-                    <div>Ultimo messaggio inviato</div>
+
+        <!-- WEBAPP CONTAINER -->
+        <div class="container flex" id="webapp-height">
+
+            <!-- PROFILE NAVIGATION -->
+            <div class="flex column" id="profile-navigation">
+
+                <!-- PROFILE -->
+                <div id="profile">
+
                 </div>
+                <!-- /PROFILE -->
+
+                <!-- ACTIVATE NOTIFICATION -->
+                <div id="activate-notification">
+
+                </div>
+                <!-- /ACTIVATE NOTIFICATION -->
+
+                <!-- SEARCH CONTACT -->
+                <div id="search-contact">
+
+                </div>
+                <!-- /SEARCH CONTACT -->
+
+                <!-- LIST CONTACTS -->
+                <div id="list-contacts">
+
+                    <!-- SINGLE CONTACT -->
+                    <div id="single-contact" class="flex" v-for="(item, index) in contacts">
+
+                        <div>
+                            <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" id="profile-picture">
+                        </div>
+
+                        <div class="flex-grow">
+                            <span id="name-contact"> {{ item.name }} </span>
+                            <p id="last-message-contact"> Ultimo messaggio inviato </p>
+                        </div>
+
+                        <div id="time-contact">12:00</div>
+
+                    </div>
+                    <!-- /SINGLE CONTACT -->
+
+                </div>
+                <!-- /LIST CONTACTS -->
+
             </div>
+            <!-- /PROFILE NAVIGATION -->
+
+
+            <!-- CHAT CONTAINER -->
+            <div class="flex column" id="chat-container">
+
+                <!-- CHAT TITLE -->
+                <div id="chat-title">
+
+                </div>
+                <!-- /CHAT TITLE -->
+
+                <!-- CHAT DISPLAY -->
+                <div id="chat-display">
+
+                </div>
+                <!-- /CHAT DISPLAY -->
+
+                <!-- SEND MESSAGE BOX -->
+                <div id="send-message-box">
+
+                </div>
+                <!-- /SEND MESSAGE BOX -->
+
+            </div>
+            <!-- /CHAT CONTAINER -->
+
         </div>
+        <!-- /WEBAPP CONTAINER -->
+
     </div>
 
 </body>
