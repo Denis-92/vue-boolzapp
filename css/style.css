@@ -5,7 +5,7 @@
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -83,7 +83,7 @@
 
 #last-message-contact,
 #time-contact {
-    color: grey;
+    color: rgb(183 186 188);
     font-size: 0.7rem;
 }
 
@@ -98,16 +98,17 @@
 }
 
 #chat-title {
-    background-color: violet;
-    height: 10%;
+    background-color: rgb(234 234 234);
+    height: 7.5%;
+    border-left: 1px solid rgb(224 224 224);
 }
 
 #chat-display {
-    background-color: beige;
-    height: 75%;
+    background-image: url('../img/mine.jpg');
+    height: 82.5%;
 }
 
 #send-message-box {
-    background-color: red;
-    height: 15%;
+    background-color: rgb(243 238 234);
+    height: 10%;
 }
