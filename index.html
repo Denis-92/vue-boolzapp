@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css"> <!-- CSS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> <!-- VUE -->
     <script src="js/script.js" defer></script> <!-- JS -->
@@ -23,7 +26,18 @@
             <div class="flex column" id="profile-navigation">
 
                 <!-- PROFILE -->
-                <section id="profile">
+                <section id="profile" class="flex space-between align-center">
+
+                    <div class="flex align-center">
+                        <img src="img/avatar_io.jpg" alt="Profilo utente" class="profile-picture">
+                        <span id="profile-username">Sofia</span>
+                    </div>
+
+                    <div id="profile-icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
 
                 </section>
                 <!-- /PROFILE -->
@@ -47,7 +61,7 @@
                     <section id="single-contact" class="flex" v-for="(item, index) in contacts">
 
                         <div>
-                            <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" id="profile-picture">
+                            <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" class="profile-picture">
                         </div>
 
                         <div class="flex-grow">
