@@ -138,6 +138,7 @@
 #chat-display {
     background-image: url('../img/mine.jpg');
     height: 82.5%;
+    overflow-y: scroll;
 }
 
 #send-message-box {
