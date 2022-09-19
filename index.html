@@ -58,7 +58,8 @@
                 <section id="list-contacts">
 
                     <!-- SINGLE CONTACT -->
-                    <section id="single-contact" class="flex" v-for="(item, index) in contacts">
+                    <section id="single-contact" class="flex" v-for="(item, index) in contacts"
+                        :class="{ selected: index === selectedContact }" @click="enterChat(index)">
 
                         <div>
                             <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" class="profile-picture">

@@ -88,6 +88,10 @@
     border: 2px solid rgb(247 247 247);
 }
 
+.selected {
+    background-color: rgb(233 235 235);
+}
+
 .profile-picture {
     width: 3rem;
     border-radius: 50%;

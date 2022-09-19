@@ -4,7 +4,17 @@ const app = new Vue(
     {
         el: '#app',
 
+        methods: {
+
+            enterChat(selectedProfile) {
+                this.selectedContact = selectedProfile;
+            }
+
+        },
+
         data: {
+
+            selectedContact: 0,
 
             contacts: [
                 {
