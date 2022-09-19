@@ -43,7 +43,11 @@
                 <!-- /PROFILE -->
 
                 <!-- ACTIVATE NOTIFICATION -->
-                <section id="activate-notification">
+                <section id="activate-notification" class="flex align-center">
+
+                    <div id="bell-notification">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
 
                 </section>
                 <!-- /ACTIVATE NOTIFICATION -->
@@ -87,6 +91,12 @@
 
                 <!-- CHAT TITLE -->
                 <section id="chat-title">
+
+                    <div>
+                        <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'"
+                            alt="contacts[selectedContact].name" class="profile-picture">
+                        {{ contacts[selectedContact].name }}
+                    </div>
 
                 </section>
                 <!-- /CHAT TITLE -->
