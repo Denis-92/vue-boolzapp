@@ -103,9 +103,13 @@
 
                 <!-- CHAT DISPLAY -->
                 <section id="chat-display">
-                    <div v-for="chat in contacts[selectedContact].messages">
-                        {{ chat.message }}
+
+                    <div>
+                        <div v-for="chat in contacts[selectedContact].messages" id="text-area" :class="chat.status">
+                            <span> {{ chat.message }} </span>
+                        </div>
                     </div>
+
                 </section>
                 <!-- /CHAT DISPLAY -->
 

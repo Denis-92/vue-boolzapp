@@ -14,7 +14,7 @@ const app = new Vue(
 
         data: {
 
-            selectedContact: 0,
+            selectedContact: 3,
 
             contacts: [
                 {
