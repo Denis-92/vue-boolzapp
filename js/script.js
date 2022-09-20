@@ -38,6 +38,7 @@ const app = new Vue(
                 const imputMessageTrimmed = this.inputChatMessage.trim();
 
                 if (imputMessageTrimmed.length > 0) {
+
                     this.contacts[this.selectedContact].messages.push(
                         {
                             date: this.getTime(),
@@ -46,9 +47,20 @@ const app = new Vue(
                         }
                     );
                     this.inputChatMessage = '';
+
+                    setTimeout(() => {
+                        this.contacts[this.selectedContact].messages.push(
+                            {
+                                date: this.getTime(),
+                                message: 'OK',
+                                status: "received"
+                            }
+                        );
+                    }, 1000
+                    );
                 }
 
-            }
+            },
 
         },
 
