@@ -23,6 +23,10 @@
     flex-direction: column;
 }
 
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
 .space-between {
     justify-content: space-between;
 }

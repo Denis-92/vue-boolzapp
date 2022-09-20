@@ -63,7 +63,8 @@
                             <i class="fa fa-search"></i>
                         </div>
                         <div id="box-search-contact" class="flex-grow flex">
-                            <input class="flex-grow" type="text" placeholder="Cerca o inizia una nuova chat" />
+                            <input class="flex-grow" type="text" placeholder="Cerca o inizia una nuova chat"
+                                v-model="filterContactList" @keyUp="showFilteredList" />
                         </div>
                     </div>
                 </section>
@@ -74,7 +75,7 @@
 
                     <!-- SINGLE CONTACT -->
                     <section id="single-contact" class="flex" v-for="(item, index) in contacts"
-                        :class="{ selected: index === selectedContact }" @click="enterChat(index)">
+                        :class="{ selected: index === selectedContact }" @click="enterChat(index)" v-if="item.visible">
 
                         <div>
                             <img :src="'img/avatar' + item.avatar + '.jpg'" alt="item.name" class="profile-picture">

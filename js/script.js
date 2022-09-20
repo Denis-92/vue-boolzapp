@@ -58,13 +58,21 @@ const app = new Vue(
                         );
                     }, 1000
                     );
-                }
 
+                }
             },
+
+            showFilteredList() {
+                this.contacts.forEach((contactElement, index) => {
+                    contactElement.visible = contactElement.name.toUpperCase().indexOf(this.filterContactList.toUpperCase()) > - 1;
+                })
+            }
 
         },
 
         data: {
+
+            filterContactList: "",
 
             inputChatMessage: "",
 
