@@ -6,7 +6,7 @@
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2.5vh auto;
 }
 
 /* --------- */
@@ -35,6 +35,14 @@
     align-items: center;
 }
 
+.text-small {
+    font-size: 0.9rem;
+}
+
+.grey-text {
+    color: rgb(177 177 177);
+}
+
 /* ------- */
 
 
@@ -42,7 +50,7 @@
 /* CONTENT */
 
 #webapp-height {
-    height: 100vh;
+    height: 95vh;
 }
 
 
@@ -58,12 +66,14 @@
     height: 7.5%;
 }
 
-#profile-icons {
+#profile-icons,
+#chat-title-icons {
     color: rgb(177 177 177);
     margin: 0 10px;
 }
 
-#profile-icons * {
+#profile-icons *,
+#chat-title-icons * {
     padding: 5px;
 }
 
@@ -79,11 +89,31 @@
     height: 3rem;
     color: rgb(146 218 252);
     text-align: center;
+    margin: 1rem;
+}
+
+#bell-notification * {
+    padding: 30% 0;
 }
 
 #search-contact {
     background-color: rgb(250 250 250);
     height: 5%;
+    padding: 0 1rem;
+}
+
+#icon-search-contact {
+    color: rgb(177 177 177);
+    background-color: white;
+    padding: 5px;
+}
+
+#box-search-contact * {
+    border: 0;
+    color: rgb(177 177 177);
+    background-color: white;
+    padding: 5px;
+    margin-left: 5px;
 }
 
 #list-contacts {
@@ -141,14 +171,20 @@
     overflow-y: scroll;
 }
 
+.chat-date {
+    text-align: right;
+}
+
 .received {
-    background-color: green;
-    align-self: flex-end;
+    background-color: white;
+    align-self: flex-start;
+    width: 50%;
 }
 
 .sent {
-    background-color: white;
-    align-self: flex-start;
+    background-color: green;
+    align-self: flex-end;
+    width: 50%;
 }
 
 #text-area {
@@ -160,4 +196,9 @@
 #send-message-box {
     background-color: rgb(243 238 234);
     height: 10%;
+}
+
+#send-message-box>* {
+    padding: 0.1rem 2rem;
+    margin: 0.1rem;
 }

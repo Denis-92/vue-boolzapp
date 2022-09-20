@@ -8,7 +8,14 @@ const app = new Vue(
 
             enterChat(selectedProfile) {
                 this.selectedContact = selectedProfile;
-            }
+            },
+
+            convertTimeHHMM(takeTime) {
+                const separateDate = takeTime.split(" ");
+                const readHour = separateDate[1].split(":");
+                const convertTime = readHour[0] + ":" + readHour[1];
+                return convertTime;
+            },
 
         },
 

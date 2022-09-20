@@ -48,13 +48,24 @@
                     <div id="bell-notification">
                         <i class="fas fa-bell-slash"></i>
                     </div>
+                    <div class="flex column">
+                        <p class="text-small">Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#" class="text-small">Attiva notifiche desktop</a>
+                    </div>
 
                 </section>
                 <!-- /ACTIVATE NOTIFICATION -->
 
                 <!-- SEARCH CONTACT -->
                 <section id="search-contact">
-
+                    <div class="flex">
+                        <div id="icon-search-contact">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div id="box-search-contact" class="flex-grow flex">
+                            <input class="flex-grow" type="text" placeholder="Cerca o inizia una nuova chat" />
+                        </div>
+                    </div>
                 </section>
                 <!-- /SEARCH CONTACT -->
 
@@ -90,12 +101,21 @@
             <div class="flex column" id="chat-container">
 
                 <!-- CHAT TITLE -->
-                <section id="chat-title">
+                <section id="chat-title" class="flex align-center">
 
                     <div>
                         <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'"
                             alt="contacts[selectedContact].name" class="profile-picture">
+                    </div>
+
+                    <div class="flex-grow">
                         {{ contacts[selectedContact].name }}
+                    </div>
+
+                    <div id="chat-title-icons">
+                        <i class="fa fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
 
                 </section>
@@ -104,9 +124,10 @@
                 <!-- CHAT DISPLAY -->
                 <section id="chat-display">
 
-                    <div>
+                    <div class="flex column">
                         <div v-for="chat in contacts[selectedContact].messages" id="text-area" :class="chat.status">
                             <span> {{ chat.message }} </span>
+                            <div class="chat-date"> {{ convertTimeHHMM(chat.date) }} </div>
                         </div>
                     </div>
 
@@ -114,7 +135,15 @@
                 <!-- /CHAT DISPLAY -->
 
                 <!-- SEND MESSAGE BOX -->
-                <section id="send-message-box">
+                <section id="send-message-box" class="flex space-between align-center">
+
+                    <div><i class="far fa-smile"></i></div>
+
+                    <div class="flex flex-grow">
+                        <input class="flex-grow grey-text" type="text" placeholder="Scrivi un messaggio">
+                    </div>
+
+                    <div><i class="fa fa-microphone"></i></div>
 
                 </section>
                 <!-- /SEND MESSAGE BOX -->
