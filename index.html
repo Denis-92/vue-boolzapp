@@ -131,7 +131,7 @@
 
                             <div class="context-menu-chat" :class="{ openContextMenuChat : index === messageToDelete }">
                                 <div>Message info</div>
-                                <div>Delete message</div>
+                                <div @click="deleteChatMessage(index)">Delete message</div>
                             </div>
 
                             <div class="flex space-between">

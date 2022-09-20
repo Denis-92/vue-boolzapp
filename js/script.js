@@ -71,6 +71,11 @@ const app = new Vue(
             openContextMenu(singleMessage) {
                 if (this.messageToDelete === singleMessage) { this.messageToDelete = -1 }
                 else { this.messageToDelete = singleMessage; }
+            },
+
+            deleteChatMessage(index) {
+                this.contacts[this.selectedContact].messages[index].status = 'removed';
+                this.messageToDelete = -1;
             }
 
         },

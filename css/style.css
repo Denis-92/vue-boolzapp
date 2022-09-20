@@ -186,9 +186,13 @@
 }
 
 .sent {
-    background-color: green;
+    background-color: rgb(213 249 186);
     align-self: flex-end;
     width: 50%;
+}
+
+.removed {
+    display: none;
 }
 
 #text-area {
@@ -207,6 +211,7 @@
     border: 1px solid black;
     top: 5vh;
     right: 0;
+    z-index: 1;
 }
 
 .context-menu-chat * {
