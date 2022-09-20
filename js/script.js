@@ -12,14 +12,49 @@ const app = new Vue(
 
             convertTimeHHMM(takeTime) {
                 const separateDate = takeTime.split(" ");
-                const readHour = separateDate[1].split(":");
-                const convertTime = readHour[0] + ":" + readHour[1];
-                return convertTime;
+                const separateHour = separateDate[1].split(":");
+                const convertedTime = separateHour[0] + ":" + separateHour[1];
+                return convertedTime;
             },
+
+            getTime() {
+                const time = new Date();
+
+                const year = this.fixTimeFormat(time.getFullYear());
+                const month = this.fixTimeFormat(time.getMonth() + 1);
+                const day = this.fixTimeFormat(time.getDay());
+                const hour = this.fixTimeFormat(time.getHours());
+                const minute = this.fixTimeFormat(time.getMinutes());
+                const second = this.fixTimeFormat(time.getSeconds());
+
+                return `${day}/${month}/${year} ${hour}:${minute}:${second}`;
+            },
+
+            fixTimeFormat(timeToFix) {
+                return timeToFix < 10 ? '0' + timeToFix : '' + timeToFix;
+            },
+
+            addToChat() {
+                const imputMessageTrimmed = this.inputChatMessage.trim();
+
+                if (imputMessageTrimmed.length > 0) {
+                    this.contacts[this.selectedContact].messages.push(
+                        {
+                            date: this.getTime(),
+                            message: this.inputChatMessage,
+                            status: "sent"
+                        }
+                    );
+                    this.inputChatMessage = '';
+                }
+
+            }
 
         },
 
         data: {
+
+            inputChatMessage: "",
 
             selectedContact: 3,
 

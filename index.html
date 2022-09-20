@@ -140,7 +140,8 @@
                     <div><i class="far fa-smile"></i></div>
 
                     <div class="flex flex-grow">
-                        <input class="flex-grow grey-text" type="text" placeholder="Scrivi un messaggio">
+                        <input class="flex-grow grey-text" type="text" placeholder="Scrivi un messaggio"
+                            v-model="inputChatMessage" @keyUp.enter="addToChat">
                     </div>
 
                     <div><i class="fa fa-microphone"></i></div>
