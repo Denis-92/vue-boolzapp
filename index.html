@@ -125,10 +125,21 @@
                 <!-- CHAT DISPLAY -->
                 <section id="chat-display">
 
-                    <div class="flex column">
-                        <div v-for="chat in contacts[selectedContact].messages" id="text-area" :class="chat.status">
-                            <span> {{ chat.message }} </span>
+                    <div class="flex column flex">
+                        <div v-for="(chat, index) in contacts[selectedContact].messages" id="text-area"
+                            :class="chat.status" class="flex column">
+
+                            <div class="context-menu-chat" :class="{ openContextMenuChat : index === messageToDelete }">
+                                <div>Message info</div>
+                                <div>Delete message</div>
+                            </div>
+
+                            <div class="flex space-between">
+                                <span> {{ chat.message }} </span>
+                                <i class="fas fa-angle-down" @click="openContextMenu(index)"></i>
+                            </div>
                             <div class="chat-date"> {{ convertTimeHHMM(chat.date) }} </div>
+
                         </div>
                     </div>
 

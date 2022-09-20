@@ -66,11 +66,18 @@ const app = new Vue(
                 this.contacts.forEach((contactElement, index) => {
                     contactElement.visible = contactElement.name.toUpperCase().indexOf(this.filterContactList.toUpperCase()) > - 1;
                 })
+            },
+
+            openContextMenu(singleMessage) {
+                if (this.messageToDelete === singleMessage) { this.messageToDelete = -1 }
+                else { this.messageToDelete = singleMessage; }
             }
 
         },
 
         data: {
+
+            messageToDelete: -1,
 
             filterContactList: "",
 
